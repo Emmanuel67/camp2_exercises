@@ -4,10 +4,23 @@
 // This function should work in both ascending or descending order.
 
 // Complete this function.
-function range() {
-
-}
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
+
+
+function range (startNumber, endNumber) {
+  const range2 = [];
+  if (startNumber < endNumber) {
+    for (let i = startNumber; i <= endNumber; i++) {
+      range2.push(i);
+    }
+  } else {
+    for (let i = startNumber; i >= endNumber; i--) {
+      range2.push(i);
+    }
+  }
+  return range2;
+}
+
 module.exports = range;
