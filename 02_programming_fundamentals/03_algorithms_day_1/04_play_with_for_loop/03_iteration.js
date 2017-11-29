@@ -4,5 +4,5 @@
 // -  Using `length`, write on `stdout` each values of the table.
 const litteralDigits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 for(let i = 0; i < litteralDigits.length; i++){
-  console.log(i);
+  console.log(litteralDigits[i]);
 }
