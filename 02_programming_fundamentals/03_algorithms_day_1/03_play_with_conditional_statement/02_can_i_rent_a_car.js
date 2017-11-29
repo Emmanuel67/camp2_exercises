@@ -25,7 +25,7 @@ const conducteurA = {
   bonus: 0.5,
 };
 
-if ((conducteurA.license === "B" || conducteurA.license === "B1") && (conducteurA.licenseYear <= 2015) && (conducteurA.accidentsCount === 0 || conducteurA.bonus >= 0.7)) {
+if ((conducteurA.license === "B" || conducteurA.license === "B1") && (conducteurA.licenseYear <= new Date().getFullYear()-2) && (conducteurA.accidentsCount === 0 || conducteurA.bonus >= 0.7)) {
   canRentACar = true;
 }
 else {
