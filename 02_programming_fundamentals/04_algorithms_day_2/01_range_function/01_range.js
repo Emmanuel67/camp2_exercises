@@ -22,5 +22,5 @@ function range (startNumber, endNumber) {
   }
   return range2;
 }
-
+console.log(range(6, 2));
 module.exports = range;
