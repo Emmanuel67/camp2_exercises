@@ -8,11 +8,15 @@ const driver = {
 // Write a function canRentACar:
 // * Input: a driver
 // * Output: a boolean if the driver can rent a car
-const nameDriver = ("")
-function canRentACar (nameDriver, driverLicense, licenseIssued, numberOfAccident, bonus) {
-  if (driverLicense >= B; licenseIssued >= 2; numberOfAccident <= 0; bonus >= 0.7);
+function canRentACar (driver) {
+  if ((driver.driverLicense === "B" || driver.driverLicense === "B1") && (driver.licenseIssued <= new Date().getFullYear()-2) && (driver.numberOfAccident === 0 || driver.bonus >= 0.7)) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
-return canRentACar
+
 
 
 // ⚠ Do not remove me ! It's for tests
