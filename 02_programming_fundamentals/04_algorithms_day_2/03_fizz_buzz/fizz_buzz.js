@@ -7,10 +7,24 @@
    - if the number is divisible by 3 and 5 : `FizzBuzz`
    - otherwise, the value is preserved.
 */
-
+const list = [1, 2, 3, 4, 5, 6];
 function fizzBuzz(list) {
-
+  const fizzBuzzArray = [];
+  for(let i = 0; i < list.length; i++) {
+    if (list[i] % 3 === 0 && list[i] % 5 === 0) {
+      fizzBuzzArray[i] = "FizzBuzz";
+    }
+    else if (list[i] % 3 === 0) {
+      fizzBuzzArray[i] = "Fizz";
+    }
+    else if (list[i] % 5 === 0) {
+      fizzBuzzArray[i] = "Buzz";
+    }
+    else {
+      fizzBuzzArray[i] = list[i];
+    }
+  }
+  return fizzBuzzArray;
 }
-
-
+console.log(fizzBuzz(list));
 module.exports = fizzBuzz;
