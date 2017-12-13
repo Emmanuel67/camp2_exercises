@@ -1,35 +1,46 @@
-# Sorting And Filtering
+# Sorting And Filtering;
 
-1. Write a query in SQL to display the full name (first and last name), and salary for those employees who earn below 6000.
+--1. Write a query in SQL to display the full name (first and last name), and salary for those employees who earn below 6000.
+SELECT first_name, last_name, salary FROM employee WHERE salary < 6000;
 
-2. Write a query in SQL to display the first and last_name, department number and salary for those employees who earn more than 8000.
+--2. Write a query in SQL to display the first and last_name, department number and salary for those employees who earn more than 8000.
+SELECT first_name, last_name, department_id, salary FROM employee WHERE salary > 8000;
 
-3. Write a query in SQL to display the first and last name, and department number for all employees whose last name is "McEwen".
+--3. Write a query in SQL to display the first and last name, and department number for all employees whose last name is "McEwen".
+SELECT first_name, last_name, department_id FROM employee WHERE last_name = 'McEwen';
 
-4. Write a query in SQL to display all the information for all employees without any department number.
+--4. Write a query in SQL to display all the information for all employees without any department number.
+SELECT * FROM employee WHERE department_id is NULL;
 
-5. Write a query in SQL to display all the information about the department Marketing.
+--5. Write a query in SQL to display all the information about the department Marketing.
+SELECT * FROM department WHERE name = 'Marketing';
 
-6. Write a query in SQL to display the full name (first and last), hire date, salary, and department number for those
-employees whose first name does not containing the letter M and make the result set in ascending order by department
-number.
+--6. Write a query in SQL to display the full name (first and last), hire date, salary, and department number for those
+--employees whose first name does not containing the letter M and make the result set in ascending order by department
+--number.
+SELECT first_name, last_name, hire_date, salary, department_id FROM employee WHERE first_name NOT LIKE '%M%' ORDER BY department_id ASC;
 
-7. Write a query in SQL to display all the information of employees whose salary is in the range of 8000 and 12000 and
-commission is not null or department number is except the number 4, 12 and 7 and they have been hired before June
-5th, 1987.
+--7. Write a query in SQL to display all the information of employees whose salary is in the range of 8000 and 12000 and
+--commission is not null or department number is except the number 4, 12 and 7 and they have been hired before June
+--5th, 1987.
+SELECT * FROM employee WHERE salary BETWEEN 8000 AND 12000 AND (commission_pct is NOT NULL OR department_id NOT IN (4,12,7)) AND hire_date < '1987-06-05';
 
-8. Write a query in SQL to display the full name (first and last name), and salary for all employees who does not earn
-any commission.
+--8. Write a query in SQL to display the full name (first and last name), and salary for all employees who does not earn
+--any commission.
+SELECT first_name, last_name, salary FROM employee WHERE commission_pct = 0;
 
-9. Write a query in SQL to display the full name (first and last), the phone number and email separated by hyphen, and
-salary, for those employees whose salary is within the range of 9000 and 17000. The column headings assign with
-Full_Name, Contact_Details and Remuneration respectively.
+--9. Write a query in SQL to display the full name (first and last), the phone number and email separated by hyphen, and
+--salary, for those employees whose salary is within the range of 9000 and 17000. The column headings assign with
+--Full_Name, Contact_Details and Remuneration respectively.
+SELECT CONCAT(first_name,' ',last_name) AS FullName, CONCAT(phone_number,'-',email) AS ContactDetails, salary FROM employee WHERE salary BETWEEN 9000 AND 17000 ;
 
-10. Write a query in SQL to display the first and last name, and salary for those employees whose first name is ending
-with the letter m.
+--10. Write a query in SQL to display the first and last name, and salary for those employees whose first name is ending
+--with the letter m.
+SELECT first_name, last_name, salary FROM employee WHERE first_name LIKE '%e';
 
-11. Write a query in SQL to display the full name (first and last) name, and salary, for all employees whose salary is
+--11. Write a query in SQL to display the full name (first and last) name, and salary, for all employees whose salary is
 out of the range 7000 and 15000 and make the result set in ascending order by the full name.
+
 
 12. Write a query in SQL to display the full name (first and last), job id and date of hire for those employees who was
 hired during November 5th, 2007 and July 5th, 2009.
