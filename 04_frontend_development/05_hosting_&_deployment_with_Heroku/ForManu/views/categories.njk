@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<head>
+  <style>
+    .card{
+      padding: 50px;
+      margin: 10px;
+    }
+  </style>
+</head>
+  <div class="row">
+    {% for object in products %}
+      <div class="col-md-6 col-lg-3">
+        <div class="card rounded" style="width: 20rem;" id="{{object.id}}">
+          <img class="card-img-top" src="https://www.decathlon.fr/media/{{object.image_path}}" alt="Card image cap">
+          <p class="card-title">{{object.title}}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+<script>
+  {% for object in products %}
+    document.getElementById("{{object.id}}").addEventListener("click", () => {
+      window.location = "/products/{{object.id}}";
+    });
+  {% endfor %}
+</script>
+{% endblock %}
